@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/chars/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/levels/Level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Game.gd" type="Script" id=3]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Level1" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 120 )
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 216 )
+max_hp = 5
+strength = 1
+jump_force = 275.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
